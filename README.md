@@ -15,7 +15,7 @@ Dismiss keyboard when any of the screen is clicked with wrapped by <TouchableWit
 Seems like expo comes with vector icons
 
 ```tsx
-import { Ionicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons'; 
 ```
 
 Search icons at https://icons.expo.fyi/
