@@ -14,9 +14,11 @@ export const AddTodo: React.FC<Props> = ({ addTodo }) => {
 
   const handleSubmit = () => {
     if (text.length < 3) {
-      Alert.alert('Oops', 'has to be more than 2 characters', [
-        { text: 'OK', onPress: () => console.log('yeah') },
-      ]);
+      setTimeout(() => {
+        Alert.alert('Oops', 'has to be more than 2 characters', [
+          { text: 'OK', onPress: () => console.log('yeah') },
+        ]);
+      }, 50);
     } else {
       addTodo(text);
       setText('');

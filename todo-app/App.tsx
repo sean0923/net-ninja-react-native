@@ -14,6 +14,7 @@ export default function App() {
 
   const handleEntireScreenPress = () => {
     console.log('aaa');
+    console.log('bbb');
     Keyboard.dismiss();
   };
 
@@ -33,12 +34,16 @@ export default function App() {
     <TouchableWithoutFeedback onPress={handleEntireScreenPress}>
       <View style={styles.container}>
         <Header />
-        <AddTodo addTodo={addTodo} />
-        <FlatList
-          data={todos}
-          keyExtractor={({ id }) => id}
-          renderItem={({ item }) => <Item todo={item} removeTodo={removeTodo} />}
-        />
+        <View style={styles.body}>
+          <AddTodo addTodo={addTodo} />
+          <View style={styles.list}>
+            <FlatList
+              data={todos}
+              keyExtractor={({ id }) => id}
+              renderItem={({ item }) => <Item todo={item} removeTodo={removeTodo} />}
+            />
+          </View>
+        </View>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -48,5 +53,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  body: {
+    flex: 1,
+    padding: 20,
+  },
+  list: {
+    flex: 1,
   },
 });
