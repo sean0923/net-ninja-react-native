@@ -1,8 +1,36 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
+import { AppLoading } from 'expo';
+import * as Font from 'expo-font';
+
+export const fonts = {
+  NUNITO: 'NUNITO',
+  NUNITO_BOLD: 'NUNITO_BOLD',
+};
+
+const fetchFont = () => {
+  console.log('bb');
+  console.log('bb');
+  return Font.loadAsync({
+    [fonts.NUNITO]: require('./assets/fonts/Nunito-Regular.ttf'),
+    [fonts.NUNITO_BOLD]: require('./assets/fonts/Nunito-Bold.ttf'),
+  });
+};
 
 export default () => {
+  const [isFetchingFont, setIsFetchingFont] = React.useState(true);
+
+  if (isFetchingFont) {
+    return (
+      <AppLoading
+        startAsync={fetchFont}
+        onFinish={() => setIsFetchingFont(false)}
+        onError={console.warn}
+      />
+    );
+  }
+
   return (
     <StyledContainer>
       <StyledHeader>
@@ -24,5 +52,5 @@ const StyledHeader = styled(View)`
 
 const StyledText = styled(Text)`
   font-size: 20px;
-  font-weight: bold;
+  font-family: ${fonts.NUNITO};
 `;
