@@ -8,4 +8,14 @@ user Alert.alert to open up modal
 
 Dismiss keyboard when any of the screen is clicked with wrapped by <TouchableWithoutFeedback>
 
-## 14 - 
+## 14 - Flexbox Basic
+
+## 15 - Icons & More Flexbox
+
+Seems like expo comes with vector icons
+
+```tsx
+import { Ionicons } from '@expo/vector-icons';
+```
+
+Search icons at https://icons.expo.fyi/
