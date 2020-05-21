@@ -15,7 +15,13 @@ Dismiss keyboard when any of the screen is clicked with wrapped by <TouchableWit
 Seems like expo comes with vector icons
 
 ```tsx
-import { MaterialIcons } from '@expo/vector-icons'; 
+import { MaterialIcons } from '@expo/vector-icons';
 ```
 
 Search icons at https://icons.expo.fyi/
+
+## 17 Custom Fonts
+
+expo-font
+Expo has AppLoading
+font is being fetched async so show loading while fetching font
