@@ -14,11 +14,7 @@ export const Home: React.FC<Props> = () => {
   );
 };
 
-const StyledContainer = styled(View)`
-  padding: 60px 20px 20px 20px;
-  align-items: center;
-  background-color: pink;
-`;
+const StyledContainer = styled(View)``;
 
 const StyledText = styled(Text)`
   font-size: 20px;

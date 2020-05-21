@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
+import { Navigator } from './routes/Navigator';
 
 export const fonts = {
   NUNITO: 'NUNITO',
@@ -31,13 +32,7 @@ export default () => {
     );
   }
 
-  return (
-    <StyledContainer>
-      <StyledHeader>
-        <StyledText>Home</StyledText>
-      </StyledHeader>
-    </StyledContainer>
-  );
+  return <Navigator />;
 };
 
 const StyledContainer = styled(View)`
