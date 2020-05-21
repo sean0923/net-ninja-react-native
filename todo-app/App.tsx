@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { Header } from './components/Header';
 import { Item } from './components/Item';
 import { AddTodo } from './components/AddTodo';
@@ -11,6 +11,11 @@ const initialTodos = [
 ];
 export default function App() {
   const [todos, setTodos] = React.useState(initialTodos);
+
+  const handleEntireScreenPress = () => {
+    console.log('aaa');
+    Keyboard.dismiss();
+  };
 
   const addTodo = (text: string) => {
     setTodos([{ text, id: Math.random().toString() }].concat(todos));
@@ -25,15 +30,17 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
-      <Header />
-      <AddTodo addTodo={addTodo} />
-      <FlatList
-        data={todos}
-        keyExtractor={({ id }) => id}
-        renderItem={({ item }) => <Item todo={item} removeTodo={removeTodo} />}
-      />
-    </View>
+    <TouchableWithoutFeedback onPress={handleEntireScreenPress}>
+      <View style={styles.container}>
+        <Header />
+        <AddTodo addTodo={addTodo} />
+        <FlatList
+          data={todos}
+          keyExtractor={({ id }) => id}
+          renderItem={({ item }) => <Item todo={item} removeTodo={removeTodo} />}
+        />
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 
