@@ -10,13 +10,9 @@ const Drawer = createDrawerNavigator();
 export const DrawerNavigator = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Root">
+      <Drawer.Navigator initialRouteName="Root" drawerPosition="right">
         <Drawer.Screen name="Root" component={HomeStackNavigator} options={{ title: 'Home' }} />
-        <Drawer.Screen
-          name="About"
-          component={AboutStackNavigator}
-          options={{ title: 'About' }}
-        />
+        <Drawer.Screen name="About" component={AboutStackNavigator} options={{ title: 'About' }} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
