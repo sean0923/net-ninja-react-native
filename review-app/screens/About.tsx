@@ -1,15 +1,21 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 interface Props {
   //
 }
 
 export const About: React.FC<Props> = () => {
+  const navigation = useNavigation();
+
+  const toHome = () => navigation.navigate('Home');
+
   return (
     <StyledContainer>
       <Text>About</Text>
+      <Button title="to Home" onPress={toHome} />
     </StyledContainer>
   );
 };

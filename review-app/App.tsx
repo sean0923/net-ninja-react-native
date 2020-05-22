@@ -11,8 +11,6 @@ export const fonts = {
 };
 
 const fetchFont = () => {
-  console.log('bb');
-  console.log('bb');
   return Font.loadAsync({
     [fonts.NUNITO]: require('./assets/fonts/Nunito-Regular.ttf'),
     [fonts.NUNITO_BOLD]: require('./assets/fonts/Nunito-Bold.ttf'),
