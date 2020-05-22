@@ -19,12 +19,26 @@ export interface ParamsList {
   ReviewDetails: { sort: 'latest' | 'top' } | undefined;
 }
 
+const headerStyles = {
+  headerStyle: {
+    backgroundColor: 'coral',
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontWeight: 'bold',
+  },
+};
+
 export const Navigator: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="ReviewDetails" component={ReviewDetails} />
+        <Stack.Screen name="Home" component={Home} options={{ title: 'Home', ...headerStyles }} />
+        <Stack.Screen
+          name="ReviewDetails"
+          component={ReviewDetails}
+          options={{ title: 'Review Details', ...headerStyles }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
