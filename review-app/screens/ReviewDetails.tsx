@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import { Text, View, Button } from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { BodyWrapper } from '../styles/commonStyledComponents';
-import { ReviewDetailsRouteProps } from '../routes/Navigator';
+import { ReviewDetailsRouteProps } from '../routes/HomeStackNavigator';
 import { fonts } from '../App';
 
 interface Props {
@@ -25,10 +25,6 @@ export const ReviewDetails: React.FC<Props> = () => {
     </BodyWrapper>
   );
 };
-
-const StyledContainer = styled(View)`
-  flex: 1;
-`;
 
 const Title = styled(Text)`
   font-size: 32px;

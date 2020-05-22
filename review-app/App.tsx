@@ -1,9 +1,10 @@
 import React from 'react';
-import styled from 'styled-components/native';
-import { Text, View } from 'react-native';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
-import { Navigator } from './routes/Navigator';
+// import { HomeStackNavigator } from './routes/HomeStackNavigator';
+import { DrawerNavigator } from './routes/DrawerNavigator';
+import { View, Text } from 'react-native';
+import { HomeStackNavigator } from './routes/HomeStackNavigator';
 
 export const fonts = {
   NUNITO: 'NUNITO',
@@ -30,20 +31,9 @@ export default () => {
     );
   }
 
-  return <Navigator />;
+  // return <View>
+  //   <Text>aaa</Text>
+  // </View>
+
+  return <DrawerNavigator />;
 };
-
-const StyledContainer = styled(View)`
-  flex: 1;
-`;
-
-const StyledHeader = styled(View)`
-  padding: 60px 20px 20px 20px;
-  align-items: center;
-  background-color: pink;
-`;
-
-const StyledText = styled(Text)`
-  font-size: 20px;
-  font-family: ${fonts.NUNITO};
-`;

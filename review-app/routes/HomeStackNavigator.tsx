@@ -29,17 +29,15 @@ const headerStyles = {
   },
 };
 
-export const Navigator: React.FC = () => {
+export const HomeStackNavigator = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} options={{ title: 'Home', ...headerStyles }} />
-        <Stack.Screen
-          name="ReviewDetails"
-          component={ReviewDetails}
-          options={{ title: 'Review Details', ...headerStyles }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} options={{ title: 'Home', ...headerStyles }} />
+      <Stack.Screen
+        name="ReviewDetails"
+        component={ReviewDetails}
+        options={{ title: 'Review Details', ...headerStyles }}
+      />
+    </Stack.Navigator>
   );
 };
