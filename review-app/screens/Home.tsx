@@ -39,9 +39,13 @@ export const Home: React.FC<Props> = () => {
     },
   ]);
 
+  const addNewReview = (newReview: ReviewProps) => {
+    setReviews([newReview, ...reviews]);
+  };
+
   return (
     <BodyWrapper>
-      <AddNewReviewModal />
+      <AddNewReviewModal addNewReview={addNewReview}/>
 
       <FlatList
         keyExtractor={({ id }) => id}

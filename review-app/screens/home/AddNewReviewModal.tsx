@@ -12,6 +12,7 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import { Formik } from 'formik';
 import * as yup from 'yup';
+import { ReviewProps } from '../../types/common.types';
 
 const validationSchema = yup.object({
   title: yup.string().required().min(4),
@@ -26,10 +27,10 @@ const validationSchema = yup.object({
 });
 
 interface Props {
-  //
+  addNewReview: (newReview: ReviewProps) => void;
 }
 
-export const AddNewReviewModal: React.FC<Props> = () => {
+export const AddNewReviewModal: React.FC<Props> = ({ addNewReview }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const open = () => setIsOpen(true);
   const close = () => setIsOpen(false);
@@ -54,7 +55,7 @@ export const AddNewReviewModal: React.FC<Props> = () => {
               <Formik
                 initialValues={{ title: '', body: '', rating: '' }}
                 onSubmit={(values) => {
-                  console.log('values: ', values);
+                  addNewReview({ id: Math.random().toString(), ...values });
                   close();
                 }}
                 validationSchema={validationSchema}
