@@ -6,3 +6,8 @@ export const BodyWrapper = styled(View)`
   background-color: white;
   flex: 1;
 `;
+
+export const fonts = {
+  NUNITO: 'NUNITO',
+  NUNITO_BOLD: 'NUNITO_BOLD',
+};

@@ -1,27 +1,29 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, Image } from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { BodyWrapper } from '../styles/commonStyledComponents';
-import { ReviewDetailsRouteProps } from '../routes/HomeStackNavigator';
-import { fonts } from '../App';
+import { ReviewDetailsRouteProps } from '../types/common.types';
+import { fonts } from '../styles/commonStyledComponents';
+import { Card } from './common/Card';
+
+import { ratingToHearts } from '../data/keyToImage';
 
 interface Props {
   //
 }
 
 export const ReviewDetails: React.FC<Props> = () => {
-  const navigation = useNavigation();
   const route = useRoute<ReviewDetailsRouteProps>();
   const { review } = route.params;
 
-  const toHome = () => navigation.navigate('Home');
-
   return (
     <BodyWrapper>
-      <Title>{review.title}</Title>
-      <Body>{review.body}</Body>
-      <Button title="to Home" onPress={toHome} />
+      <Card>
+        <Title>{review.title}</Title>
+        <Body>{review.body}</Body>
+        <Image source={ratingToHearts[review.rating]} />
+      </Card>
     </BodyWrapper>
   );
 };

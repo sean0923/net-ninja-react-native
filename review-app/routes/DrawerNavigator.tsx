@@ -12,7 +12,7 @@ export const DrawerNavigator = () => {
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Root" drawerPosition="right">
         <Drawer.Screen name="Root" component={HomeStackNavigator} options={{ title: 'Home' }} />
-        <Drawer.Screen name="About" component={AboutStackNavigator} options={{ title: 'About' }} />
+        <Drawer.Screen name="DrawerAbout" component={AboutStackNavigator} options={{ title: 'DrawerAbout' }} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

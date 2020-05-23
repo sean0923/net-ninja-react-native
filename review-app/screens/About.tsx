@@ -23,7 +23,3 @@ export const About: React.FC<Props> = () => {
 const StyledContainer = styled(View)`
   flex: 1;
 `;
-
-// const StyledText = styled(Text)`
-//  flex: 1;
-// `;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet, Button, ImageBackground } from 'react-native';
 
 interface Props {
   //
@@ -8,9 +8,9 @@ interface Props {
 
 export const Header: React.FC<Props> = () => {
   return (
-    <StyledContainer>
-      <StyledText>Header</StyledText>
-    </StyledContainer>
+          <StyledContainer>
+          <StyledText>Header</StyledText>
+        </StyledContainer>
   );
 };
 

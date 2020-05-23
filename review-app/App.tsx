@@ -1,15 +1,8 @@
 import React from 'react';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
-// import { HomeStackNavigator } from './routes/HomeStackNavigator';
 import { DrawerNavigator } from './routes/DrawerNavigator';
-import { View, Text } from 'react-native';
-import { HomeStackNavigator } from './routes/HomeStackNavigator';
-
-export const fonts = {
-  NUNITO: 'NUNITO',
-  NUNITO_BOLD: 'NUNITO_BOLD',
-};
+import { fonts } from './styles/commonStyledComponents';
 
 const fetchFont = () => {
   return Font.loadAsync({
@@ -30,10 +23,6 @@ export default () => {
       />
     );
   }
-
-  // return <View>
-  //   <Text>aaa</Text>
-  // </View>
 
   return <DrawerNavigator />;
 };

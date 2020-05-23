@@ -1,23 +1,10 @@
 import React from 'react';
-import {
-  NavigationContainer,
-  RouteProp,
-  useNavigation,
-  DrawerActions,
-} from '@react-navigation/native';
+import { useNavigation, DrawerActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Home, ReviewProps } from '../screens/Home';
+import { Home } from '../screens/Home';
 import { ReviewDetails } from '../screens/ReviewDetails';
-import { Header } from '../screens/common/Header';
-import { Button } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-
-export type RootStackParamList = {
-  Home: undefined;
-  ReviewDetails: { review: ReviewProps };
-};
-
-export type ReviewDetailsRouteProps = RouteProp<RootStackParamList, 'ReviewDetails'>;
+import { RootStackParamList } from '../types/common.types';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
